@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+}
+
+.animecontainer {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  margin-top: 10vh;
+}
+
+.blocks {
+  position: relative;
+  width: 40%;
+  height: 20%;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+}
+
+.top {
+  position: relative;
+  width: 104%;
+  height: 559%;
+  border-radius: 19px;
+  transform: rotateX(108deg) rotateY(-14deg) rotateZ(21deg);
+  background: linear-gradient(77deg,
+      rgba(43, 255, 255, 0.9),
+      rgba(2, 148, 148, 0.9));
+}
+
+.sides {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 15px;
+  position: absolute;
+}
+
+.left {
+  width: 109%;
+  height: 126%;
+  top: 126px;
+  left: -178px;
+  transform: rotateX(105deg) rotateY(211deg) rotateZ(1deg);
+  transform-origin: right center;
+  background: linear-gradient(275deg,
+  rgba(43, 255, 255, 0.9),
+  rgba(2, 151, 151, 0.9));
+}
+
+.right {
+  width: 97%;
+  height: 121%;
+  top: 173px;
+  left: 60px;
+  transform: rotateX(105deg) rotateY(339deg) rotateZ(-1deg);
+  background: linear-gradient(110deg,
+  rgba(1, 191, 191, 0.9),
+  rgba(0, 166, 166, 0.9));
+}
+
+#block1 {
+  z-index:5;
+  animation: moveBlock1 3s ease-in-out infinite;
+
+}
+
+#block2 {
+  z-index: 4;
+  animation: moveBlock2 3s ease-in-out infinite;
+}
+
+#block3 {
+  z-index: 3;
+  animation: moveBlock3 3s ease-in-out infinite;
+}
+
+#block4 {
+  z-index: 2;
+  animation: moveBlock4 3s ease-in-out infinite;
+}
+
+#block5 {
+  z-index: 1;
+  animation: moveBlock5 3s ease-in-out infinite;
+}
+
+.base{
+  opacity: 0.7;
+  width: 250px;
+  height: 250px;
+  background-color: rgb(255, 0, 123);
+  transform-style: preserve-3d;
+  margin: 0 auto;
+  margin-top: 60px;
+  transform: rotateX(64deg) rotateY(6deg) rotateZ(45deg);
+  filter: blur(25px);
+  box-shadow: 30px 30px rgb(255, 19, 231);
+}
+
+.ballCont{
+  top: 160px;
+  position: absolute;
+  z-index: 6;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at 30% 30%, white, rgb(196, 0, 0));
+  border-radius: 50%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  transform-style: preserve-3d;
+  animation: moveBall 3s ease-in-out infinite, compressBall 3s linear infinite;
+}
+
+.ballShadow{
+  position: absolute;
+  z-index: 6;
+  bottom: 37%;
+  left: 50%;
+  transform: translate(-50%) rotateY(60deg);
+  width: 100px;
+  height: 100px;
+  background:radial-gradient(circle at 50% 50% ,black, rgb(69, 69, 69));
+  opacity: 0.8;
+  filter: blur(8px);
+  border-radius: 50%;
+  animation: shadowAnimation 3s ease-in infinite;
+}
+
+/* ANIMATIONS */
+
+@keyframes moveBlock1{
+  0%{}
+  50%{
+    transform: translateY(95px);
+  }
+  100%{}
+}
+
+@keyframes moveBlock2{
+  0%{}
+  50%{
+    transform: translateY(85px);
+  }
+  100%{}
+}
+
+@keyframes moveBlock3{
+  0%{}
+  50%{
+    transform: translateY(70px);
+  }
+  100%{}
+}
+
+@keyframes moveBlock4{
+  0%{}
+  50%{
+    transform: translateY(55px);
+  }
+  100%{}
+}
+
+@keyframes moveBlock5{
+  0%{}
+  50%{
+    transform: translateY(30px);
+  }
+  100%{}
+}
+
+@keyframes moveBall{
+  0%{}
+  50%{top: 30px;}
+  100%{}
+}
+
+@keyframes compressBall{
+  0%{height: 70px;}
+  20%{height: 80px;}
+  95%{height: 80px;}
+  100%{height: 70px;}
+}
+
+@keyframes shadowAnimation{
+  0%{
+    width: 100px;
+    height: 100px;
+  }
+  30%{
+    width: 0;
+    height: 0;
+    
+  }
+  70%{
+    width: 0;
+    height: 0;
+    
+  }
+  100%{
+    width: 100px;
+    height: 100px;
+
+  }
+}
